@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Simple model of a magnet}{2}{0}{1}
+\beamer@sectionintoc {2}{Solutions}{5}{0}{2}

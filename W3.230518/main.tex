@@ -1,0 +1,138 @@
+\documentclass[10pt,aspectratio=43,mathserif,table]{beamer} 
+%  设置为 Beamer 文档类型，设置字体为 10pt，长宽比为16:9，数学字体为 serif 风格
+\batchmode
+
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{hyperref}
+\usepackage{diagbox} % 表头斜线分区
+% 导入一些用到的宏包
+\usepackage{amsmath,bm,amsfonts,amssymb,enumerate,epsfig,bbm,calc,color,ifthen,capt-of,multimedia,hyperref}
+\usefonttheme{serif}
+\usepackage{mathptmx}
+\usepackage{xeCJK} %导入中文包
+%\setCJKmainfont{SimHei} %字体采用黑体  Microsoft YaHei
+%\setmonofont{Courier New}
+%\setCJKmainfont[AutoFakeBold = {2.15},ItalicFont={KaiTi}]{SimSun}
+%\setCJKfamilyfont{xw}{STXinwei}
+
+%\setsansfont{Microsoft YaHei}
+
+%\setsansfont{Arial}
+
+
+\usetheme{Berlin} %主题
+%\usecolortheme{sustech} %主题颜色
+
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+\usepackage{fancybox}
+\usepackage{xcolor}
+% \usepackage{times}
+\usepackage{listings}
+
+\usepackage{booktabs}
+\usepackage{colortbl}
+
+\newcommand{\Console}{Console}
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color
+	basicstyle=\footnotesize\rmfamily,     % size of fonts used for the code
+	columns=fullflexible,
+	breaklines=true,                 % automatic line breaking only at whitespace
+	captionpos=b,                    % sets the caption-position to bottom
+	tabsize=4,
+	commentstyle=\color{mygreen},    % comment style
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	keywordstyle=\color{blue},       % keyword style
+	stringstyle=\color{mymauve}\ttfamily,     % string literal style
+	numbers=left, 
+	%	frame=single,
+	rulesepcolor=\color{red!20!green!20!blue!20},
+	% identifierstyle=\color{red},
+	language=c
+}
+
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mygray}{gray}{.9}
+\definecolor{mypink}{rgb}{.99,.91,.95}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+
+%题目，作者，学校，日期
+\title{Uniform Oscillator}
+%\subtitle{\fontsize{9pt}{14pt}\textbf{跨临界分岔}}
+\author{Introducer: Yichen Lu\quad \newline  \newline \quad }
+\institute{\fontsize{8pt}{14pt}}
+\date{\today}
+\newcommand{\concept}{Uniform Oscillator}
+
+%学校Logo
+%\pgfdeclareimage[height=0.5cm]{sustech-logo}{sustech-logo.pdf}
+%\logo{\pgfuseimage{sustech-logo}\hspace*{0.3cm}}
+
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>
+	\frametitle{\textbf{Contents}}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+\beamerdefaultoverlayspecification{<+->}
+% -----------------------------------------------------------------------------
+\begin{document}
+% -----------------------------------------------------------------------------
+
+\frame{\titlepage}
+
+% \section[Contents]{}   %目录
+% \begin{frame}{Contents}
+% \tableofcontents
+% \end{frame}
+
+% -----------------------------------------------------------------------------
+\section{Concept}
+
+\begin{frame}{\concept}
+A point on a circle is often called an angle or a \textbf{phase}. Then the simplest oscillator of all is one in which the phase $\theta$ changes uniformly:
+	\begin{itemize}
+		\item $\dot{\theta}=\omega$, where $\omega$ is a constant. 
+		\item The solution is $\theta(t)=\omega t+\theta_0$. 
+		\item which corresponds to uniform motion around the circle at an angular frequency $\omega$. This solution is \textbf{periodic}, in the sense that $\theta(t)$ changes by $2\pi$ , and therefore returns to the same point on the circle, after a time $T = 2\pi / \omega$. We call T the period of the oscillation.
+	\end{itemize}
+\end{frame}
+
+\section{Exercises}
+
+\begin{frame}{Exercises 4.2.1}
+
+\begin{itemize}
+	\item (Church bells) The bells of two different churches are ringing. One bell rings every 3 seconds, and the other rings every 4 seconds. Assume that the bells have just rung at the same time. How long will it be until the next time they ring together? Answer the question in two ways: using common sense, and using the method of Example 4.2.1.
+	\item Common sense: the first time they ring together will be after 12 (the least common multiple of 3 and 4) seconds.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	
+	\begin{itemize}
+		\item (Church bells) The bells of two different churches are ringing. One bell rings every 3 seconds, and the other rings every 4 seconds. Assume that the bells have just rung at the same time. How long will it be until the next time they ring together? Answer the question in two ways: using common sense, and using the method of Example 4.2.1.
+		\item Use the method of Example 4.2.1:
+		$$
+		T_{\mathrm{lap}}=\cfrac{2\pi}{\omega_1 - \omega_2} 
+		= \left(\cfrac{1}{T_1} - \cfrac{1}{T_2}\right)^{-1} 
+		= \left(\cfrac{1}{3} - \cfrac{1}{4}\right)^{-1}
+		= \left(\cfrac{1}{12}\right)^{-1} = 12
+		$$
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+	\LARGE \centering Thank you for listening!
+\end{frame}
+
+\end{document}
+
